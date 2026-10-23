@@ -2,6 +2,8 @@
 
 WezTerm + tmux + Hammerspoon 的个人终端配置。配置源文件统一存放在本目录，通过符号链接接入各个程序的默认配置位置。
 
+![终端配置预览](images.png)
+
 ## 内容一览
 
 | 目录 | 用途 | 链接到的位置 |
@@ -94,6 +96,7 @@ macos_window_background_blur = 35,
 dotfiles/
 ├── install.sh
 ├── README.md
+├── images.png
 ├── hammerspoon/
 │   ├── init.lua
 │   └── wezterm_hotkey.lua
