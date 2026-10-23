@@ -1,0 +1,16 @@
+# Gruvbox Dark Hard
+setw -g clock-mode-colour '#d5b06b'
+setw -g mode-style 'fg=#1d2021 bg=#d5b06b bold'
+set -g pane-border-style 'fg=#504945'
+set -g pane-active-border-style 'fg=#d5b06b'
+set -g pane-border-format '#{?pane_active,#[fg=#d5b06b bg=terminal nobold]#[fg=#1d2021 bg=#d5b06b bold],#[fg=#d5c4a1 bg=#1d2021 nobold]} #P   #(ps -o args= -p #{pane_pid} 2>/dev/null | head -1 | sed "s/^-//")   #{pane_current_path} #{?window_zoomed_flag,#[fg=#fabd2f] Z ,}#{?pane_active,#[fg=#d5b06b bg=terminal nobold],}#[default]'
+set -g status-format[1] "#[bg=#504945 fill=#504945]"
+set -g status-style 'bg=terminal fg=#ebdbb2'
+set -g status-left '#[fg=#1d2021,bg=#b8bb26,bold]  #S #[fg=#b8bb26,bg=terminal,nobold] '
+set -g status-right '#[fg=#282828,bg=terminal,nobold]#[fg=#bdae93,bg=#282828]  %H:%M #[fg=#d5b06b,bg=#282828]#[fg=#1d2021,bg=#d5b06b]  %d %b '
+setw -g window-status-current-style 'fg=#1d2021 bg=#d5b06b bold'
+setw -g window-status-current-format '#[fg=#d5b06b,bg=terminal,nobold]#[fg=#1d2021,bg=#d5b06b,bold] #I:#W#F #[fg=#d5b06b,bg=terminal,nobold] '
+setw -g window-status-style 'fg=#928374 bg=#282828'
+setw -g window-status-format '#[fg=#282828,bg=terminal,nobold]#[fg=#bdae93,bg=#282828] #I:#W#F #[fg=#282828,bg=terminal] '
+setw -g window-status-bell-style 'fg=#fb4934 bg=#1d2021 bold'
+set -g message-style 'fg=#1d2021 bg=#fabd2f bold'

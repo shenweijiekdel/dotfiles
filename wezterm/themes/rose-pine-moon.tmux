@@ -1,0 +1,16 @@
+# Rosé Pine Moon
+setw -g clock-mode-colour '#ea9a97'
+setw -g mode-style 'fg=#232136 bg=#f6c177 bold'
+set -g pane-border-style 'fg=#44415a'
+set -g pane-active-border-style 'fg=#ea9a97'
+set -g pane-border-format '#{?pane_active,#[fg=#ea9a97 bg=terminal nobold]#[fg=#232136 bg=#ea9a97 bold],#[fg=#c4bfd8 bg=#232136 nobold]} #P   #(ps -o args= -p #{pane_pid} 2>/dev/null | head -1 | sed "s/^-//")   #{pane_current_path} #{?window_zoomed_flag,#[fg=#f6c177] Z ,}#{?pane_active,#[fg=#ea9a97 bg=terminal nobold],}#[default]'
+set -g status-format[1] "#[bg=#44415a fill=#44415a]"
+set -g status-style 'bg=terminal fg=#e0def4'
+set -g status-left '#[fg=#232136,bg=#f6c177,bold]  #S #[fg=#f6c177,bg=terminal,nobold] '
+set -g status-right '#[fg=#2a273f,bg=terminal,nobold]#[fg=#908caa,bg=#2a273f]  %H:%M #[fg=#ea9a97,bg=#2a273f]#[fg=#232136,bg=#ea9a97]  %d %b '
+setw -g window-status-current-style 'fg=#232136 bg=#ea9a97 bold'
+setw -g window-status-current-format '#[fg=#ea9a97,bg=terminal,nobold]#[fg=#232136,bg=#ea9a97,bold] #I:#W#F #[fg=#ea9a97,bg=terminal,nobold] '
+setw -g window-status-style 'fg=#6e6a86 bg=#2a273f'
+setw -g window-status-format '#[fg=#2a273f,bg=terminal,nobold]#[fg=#908caa,bg=#2a273f] #I:#W#F #[fg=#2a273f,bg=terminal] '
+setw -g window-status-bell-style 'fg=#eb6f92 bg=#232136 bold'
+set -g message-style 'fg=#232136 bg=#f6c177 bold'

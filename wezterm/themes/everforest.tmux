@@ -1,0 +1,16 @@
+# Everforest
+setw -g clock-mode-colour '#a7c080'
+setw -g mode-style 'fg=#2d353b bg=#dbbc7f bold'
+set -g pane-border-style 'fg=#475258'
+set -g pane-active-border-style 'fg=#a7c080'
+set -g pane-border-format '#{?pane_active,#[fg=#a7c080 bg=terminal nobold]#[fg=#232a2e bg=#a7c080 bold],#[fg=#bdc7bd bg=#2d353b nobold]} #P   #(ps -o args= -p #{pane_pid} 2>/dev/null | head -1 | sed "s/^-//")   #{pane_current_path} #{?window_zoomed_flag,#[fg=#dbbc7f] Z ,}#{?pane_active,#[fg=#a7c080 bg=terminal nobold],}#[default]'
+set -g status-format[1] "#[bg=#475258 fill=#475258]"
+set -g status-style 'bg=terminal fg=#d3c6aa'
+set -g status-left '#[fg=#232a2e,bg=#dbbc7f,bold]  #S #[fg=#dbbc7f,bg=terminal,nobold] '
+set -g status-right '#[fg=#343f44,bg=terminal,nobold]#[fg=#9da9a0,bg=#343f44]  %H:%M #[fg=#a7c080,bg=#343f44]#[fg=#232a2e,bg=#a7c080]  %d %b '
+setw -g window-status-current-style 'fg=#232a2e bg=#a7c080 bold'
+setw -g window-status-current-format '#[fg=#a7c080,bg=terminal,nobold]#[fg=#232a2e,bg=#a7c080,bold] #I:#W#F #[fg=#a7c080,bg=terminal,nobold] '
+setw -g window-status-style 'fg=#859289 bg=#343f44'
+setw -g window-status-format '#[fg=#343f44,bg=terminal,nobold]#[fg=#9da9a0,bg=#343f44] #I:#W#F #[fg=#343f44,bg=terminal] '
+setw -g window-status-bell-style 'fg=#e67e80 bg=#2d353b bold'
+set -g message-style 'fg=#2d353b bg=#dbbc7f bold'

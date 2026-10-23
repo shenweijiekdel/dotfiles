@@ -1,0 +1,16 @@
+# Catppuccin Mocha
+setw -g clock-mode-colour '#cba6f7'
+setw -g mode-style 'fg=#1e1e2e bg=#f9e2af bold'
+set -g pane-border-style 'fg=#45475a'
+set -g pane-active-border-style 'fg=#cba6f7'
+set -g pane-border-format '#{?pane_active,#[fg=#cba6f7 bg=terminal nobold]#[fg=#1e1e2e bg=#cba6f7 bold],#[fg=#bac2de bg=#1e1e2e nobold]} #P   #(ps -o args= -p #{pane_pid} 2>/dev/null | head -1 | sed "s/^-//")   #{pane_current_path} #{?window_zoomed_flag,#[fg=#f9e2af] Z ,}#{?pane_active,#[fg=#cba6f7 bg=terminal nobold],}#[default]'
+set -g status-format[1] "#[bg=#45475a fill=#45475a]"
+set -g status-style 'bg=terminal fg=#cdd6f4'
+set -g status-left '#[fg=#1e1e2e,bg=#f5c2e7,bold]  #S #[fg=#f5c2e7,bg=terminal,nobold] '
+set -g status-right '#[fg=#313244,bg=terminal,nobold]#[fg=#a6adc8,bg=#313244]  %H:%M #[fg=#cba6f7,bg=#313244]#[fg=#1e1e2e,bg=#cba6f7]  %d %b '
+setw -g window-status-current-style 'fg=#1e1e2e bg=#cba6f7 bold'
+setw -g window-status-current-format '#[fg=#cba6f7,bg=terminal,nobold]#[fg=#1e1e2e,bg=#cba6f7,bold] #I:#W#F #[fg=#cba6f7,bg=terminal,nobold] '
+setw -g window-status-style 'fg=#7f849c bg=#313244'
+setw -g window-status-format '#[fg=#313244,bg=terminal,nobold]#[fg=#a6adc8,bg=#313244] #I:#W#F #[fg=#313244,bg=terminal] '
+setw -g window-status-bell-style 'fg=#f38ba8 bg=#1e1e2e bold'
+set -g message-style 'fg=#1e1e2e bg=#f9e2af bold'

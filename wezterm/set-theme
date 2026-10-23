@@ -1,0 +1,32 @@
+#!/bin/bash
+set -euo pipefail
+
+config_dir="$(cd "$(dirname "$0")" && pwd)"
+selection="$config_dir/current-theme"
+
+if [[ "${1:-}" == "--tmux-only" ]]; then
+    IFS= read -r theme < "$selection"
+    tmux source-file "$config_dir/themes/$theme.tmux"
+    exit 0
+fi
+
+if [[ $# -ne 1 ]]; then
+    printf '用法：%s <everforest|rose-pine-moon|gruvbox-dark-hard|catppuccin-mocha>\n' "$0" >&2
+    exit 1
+fi
+
+theme="$1"
+case "$theme" in
+    everforest|rose-pine-moon|gruvbox-dark-hard|catppuccin-mocha) ;;
+    *) printf '不支持的主题：%s\n' "$theme" >&2; exit 1 ;;
+esac
+
+[[ -f "$config_dir/themes/$theme.lua" && -f "$config_dir/themes/$theme.tmux" ]]
+
+if command -v tmux >/dev/null && tmux list-sessions >/dev/null 2>&1; then
+    tmux source-file -n "$config_dir/themes/$theme.tmux"
+    tmux source-file "$config_dir/themes/$theme.tmux"
+fi
+
+printf '%s\n' "$theme" > "$selection"
+printf '已切换主题：%s（WezTerm 自动重载，运行中的 tmux 已同步）\n' "$theme"
