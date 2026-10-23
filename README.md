@@ -110,7 +110,9 @@ dotfiles/
 
 ## 注意
 
-- `install.sh` 会替换现有配置，但会先备份；若是旧链接则直接替换，不会备份旧链接目标。
+- `install.sh` 会替换现有配置：遇到普通文件或目录时，复制到本目录下 `.backup/<时间戳>/` 后再建立链接，原文件不会被删除到仓库之外；遇到旧符号链接则直接替换。
+- `.backup/` 已加入 `.gitignore`，不会提交到仓库。
+- 本机首次迁移前的原始配置另行保存在 `~/dotfiles-backup/20261023/`，仅作备份，不参与运行。
 - Hammerspoon 的 `Spoons/` 目录不在本仓库内，如使用额外 Spoon 需单独同步。
 - `~/dotfiles` 不是 Git 仓库；如需跨机器同步，可自行 `git init` 后推送到远端。
 - 主题切换脚本中的 `set-theme` 依赖 WezTerm 配置目录结构，链接后应以 `~/.config/wezterm/set-theme` 调用。

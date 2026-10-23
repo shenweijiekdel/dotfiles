@@ -10,8 +10,11 @@ link() {
     if [[ -L "$target" ]]; then
         rm "$target"
     elif [[ -e "$target" ]]; then
-        mv "$target" "$target.backup.$stamp"
-        printf '已备份原有文件：%s -> %s.backup.%s\n' "$target" "$target" "$stamp"
+        mkdir -p "$dotfiles/.backup/$stamp"
+        local backup="$dotfiles/.backup/$stamp/$(printf '%s' "${target#"$HOME"/}" | tr '/' '_')"
+        cp -RP "$target" "$backup"
+        rm -rf "$target"
+        printf '已备份原有文件：%s -> %s\n' "$target" "$backup"
     fi
     ln -s "$source" "$target"
     printf '已链接：%s -> %s\n' "$target" "$source"
